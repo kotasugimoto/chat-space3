@@ -1,26 +1,15 @@
-# README
+# users
+ - create divice
 
-* Ruby version
+# members
+ - group_id :references
+ - user_id :references
 
-* System dependencies
+# groups
+ - group_name :string
 
-* Configuration
-
-* Database creation
- -#members
-  -group_id :references
-  -user_id :references
- -#groups
-  -group_name :string
- -#messages
-  -body :text
-  -image :string
-  -group_id :references
-  -user_id :references
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+# messages
+ - body :text
+ - image :string
+ - group_id :references
+ - user_id :references
