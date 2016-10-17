@@ -20,8 +20,8 @@ Things you may want to cover:
  -messages
   -body :text
   -image :string
-  -group_id :integer
-  -user_id :integer
+  -group_id :references
+  -user_id :references
 * Database initialization
 
 * How to run the test suite
