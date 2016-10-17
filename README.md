@@ -12,13 +12,11 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
- -users
-  -name :string PRIMARY KEY
-  -mail :string PRIMARY KEY
-  -pass :string PRIMARY KEY
+ -members
+  -group_id :references
+  -user_id :references
  -groups
   -group_name :string
-  -user_id :integer
  -messages
   -body :text
   -image :string
