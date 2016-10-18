@@ -1,24 +1,15 @@
-# README
+# users
+ - create divice
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# members
+ - group_id :references
+ - user_id :references
 
-Things you may want to cover:
+# groups
+ - group_name :string
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# messages
+ - body :text
+ - image :string
+ - group_id :references
+ - user_id :references
