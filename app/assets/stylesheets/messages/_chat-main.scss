@@ -9,11 +9,11 @@
 	padding:0 40px;
 	background-color:#fff;
 	border-bottom:1px solid #eee;
+	&--left {
+	float: left;
+	}
 }
 
-.chat-header--left {
-	float: left;
-}
 
 .chat-header h2 {
 	font-size: 20px;
