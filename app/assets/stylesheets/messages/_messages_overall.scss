@@ -1,0 +1,33 @@
+.layout-notification{
+	flex:1;
+}
+
+.chat{
+	height: 100%;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+html,body{
+	height:100%;
+}
+
+* {
+	box-sizing:border-box;
+}
+
+body{
+	color:#434a54;
+	margin:0;
+	display:flex;
+	flex-direction:column;
+	font-family:"Hiragino Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Arial, sans-serif;
+}
+
+a{
+	text-decoration:none
+}
