@@ -4,17 +4,19 @@ class MessagesController < ApplicationController
 		@message = Message.new
 	end
 
-	def new
-		@message = Message.new
-	end
-
 	def create
-		Message.create(message_params)
-		redirect_to controller: :messages, action: :index
+		@message = Message.create(message_params)
+		if @message.save
+			flash[:success] = "保存されました！"
+	        redirect_to controller: :messages, action: :index
+        else
+	        flash[:error] = "空欄！保存できません！"
+	        render:index
+    	end
 	end
 
 	private
 	def message_params
-		params.permit(:body)
+		params.require(:message).permit(:body)
 	end
 end

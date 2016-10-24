@@ -229,7 +229,6 @@
        卵産まれた
 
    .chat-footer
-
     = form_for @message do |f|
 
      .chat-footer__body
@@ -237,7 +236,4 @@
 
       %label.chat-footer__file
        %i.fa.fa-image
-
      = f.submit "Send", data: { disable_with: "送信中..." }
-
-
