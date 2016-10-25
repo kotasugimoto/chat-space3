@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-	@message = Message.create(message_params)
+	@message = Message.new(message_params)
 	if @message.save
 	  lash[:success] = "保存されました！"
 	  redirect_to action: :index
