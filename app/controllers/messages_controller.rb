@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
 	if @message.save
 	  lash[:success] = "保存されました！"
 	  redirect_to action: :index
-    else
+	else
 	  flash[:error] = "空欄！保存できません！"
 	  render:index
     end
