@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 	  redirect_to action: :index
 	else
 	  flash[:error] = "空欄！保存できません！"
-	  render:index
+	  render :index
     end
   end
 
