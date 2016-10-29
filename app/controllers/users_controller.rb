@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     if user.update(update_params)
       flash[:edit] = "ユーザー情報を変更しました"
-      redirect_to controller: 'messages',action: 'index'
+      redirect_to root_url
     else
       redirect_to action: 'edit'
       user.errors.full_messages.each do |message|
