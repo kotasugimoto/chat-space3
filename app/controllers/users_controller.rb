@@ -4,8 +4,15 @@ class UsersController < ApplicationController
   end
   def update
     user = User.find(params[:id])
-    user.update(update_params)
-    redirect_to controller: 'messages',action: 'index'
+    if user.update(update_params)
+      flash[:edit] = "ユーザー情報を変更しました"
+      redirect_to root_url
+    else
+      redirect_to action: 'edit'
+      user.errors.full_messages.each do |message|
+        flash[:error] = message
+     end
+    end
   end
 
   private
