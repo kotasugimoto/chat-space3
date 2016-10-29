@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
   def update
     user = User.find(params[:id])
-    user.update_with_password(update_params)
+    user.update(update_params)
     redirect_to controller: 'messages',action: 'index'
   end
 
