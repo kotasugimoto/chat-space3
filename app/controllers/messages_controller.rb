@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
   def index
-	@message = Message.new
+	  @message = Message.new
   end
 
   def create
-	@message = Message.new(message_params)
+	  @message = Message.new(message_params)
 	if @message.save
 	  flash[:success] = "保存されました！"
 	  redirect_to action: :index
@@ -16,6 +16,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-	params.require(:message).permit(:body)
+	  params.require(:message).permit(:body)
   end
 end
