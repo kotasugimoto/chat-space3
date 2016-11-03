@@ -10,10 +10,10 @@
     %h5 OHHHHHHHHHH!!!!!!
 
     .chat-user__actions
-     =link_to new_group_path do
+     =link_to new_group_path(current_user), class: "chat-user__actions__action" do
       %i(class="fa fa-pencil-square-o")
 
-     = link_to edit_user_path(current_user) do
+     = link_to edit_user_path(current_user), class: "chat-user__actions__action" do
       %i(class="fa fa-cog")
 
    %ul.chat-groups
