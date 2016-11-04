@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.create(group_params)
     if @group.save
-      redirect_to root_path
+      redirect_to messages_path
     else
       redirect_to action: 'new'
     end
