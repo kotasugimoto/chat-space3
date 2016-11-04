@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028084833) do
+ActiveRecord::Schema.define(version: 20161104024714) do
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "group_name"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20161028084833) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "body",       limit: 65535
     t.string   "image"
-    t.integer  "group_id"
     t.integer  "user_id"
+    t.integer  "group_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
@@ -56,4 +56,6 @@ ActiveRecord::Schema.define(version: 20161028084833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
 end
