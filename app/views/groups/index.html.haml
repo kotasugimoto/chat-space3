@@ -1,0 +1,16 @@
+%div.chat-side
+  %div.chat-user.clearfix
+    %h5= current_user.name
+    %div.chat-user__actions
+      = link_to new_group_path, class: "chat-user__actions__action" do
+        %i.fa.fa-pencil-square-o
+      = link_to edit_user_path(current_user), class: "chat-user__actions__action" do
+        %i.fa.fa-cog
+
+  %ul.chat-groups
+    %li.chat-group
+      - @groups.each do |group|
+        %p.chat-group__name
+          = link_to group_messages_path(group),class: "chat-group__link" do
+            = group.group_name
+        %p.chat-group__message
