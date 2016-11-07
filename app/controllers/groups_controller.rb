@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
-    @message = Message.new
   end
   def new
     @group = Group.new
@@ -24,7 +23,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_messages_path(@group), flash: {notice: '登録情報が変更されました。'}
     else
-      render 'new'
+      render 'edit'
       flash[:alert] = 'グループの作成に失敗しました'
     end
   end
