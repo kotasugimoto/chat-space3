@@ -12,18 +12,12 @@
       %i.fa.fa-cog
    %ul.chat-groups
     %li.chat-group
-     - @groups.each do |group|
-      %p.chat-group__name
-      = link_to group_messages_path(group),class: "chat-group__link" do
-       = group.group_name
-      %p.chat-group__message
-      - unless group.messages[0].nil?
-       = group.messages[0].body
+     = render partial: "group",collection: @groups
   .chat-main
    %div(class="chat-header clearfix")
     .chat-header--left
      %h2
-      #{@group.group_name}
+      #{@group.name}
      %p.chat-header__users
       Member :
       %span.chat-header__user
