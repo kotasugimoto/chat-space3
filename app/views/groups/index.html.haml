@@ -10,7 +10,4 @@
   %ul.chat-groups
     %li.chat-group
       - @groups.each do |group|
-        %p.chat-group__name
-          = link_to group_messages_path(group),class: "chat-group__link" do
-            = group.group_name
-        %p.chat-group__message
+        = render partial: "messages/group",locals: { group: group }

@@ -1,0 +1,6 @@
+%p.chat-group__name
+  = link_to group_messages_path(group),class: "chat-group__link" do
+    = group.name
+  %p.chat-group__message
+  - unless group.messages[0].nil?
+    = group.messages[0].body
