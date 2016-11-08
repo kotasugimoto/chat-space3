@@ -9,5 +9,4 @@
 
   %ul.chat-groups
     %li.chat-group
-      - @groups.each do |group|
-        = render partial: "messages/group",locals: { group: group }
+      = render partial: "messages/group",collection: @groups
