@@ -10,9 +10,10 @@ class MessagesController < ApplicationController
   def create
 	  @message = Message.new(message_params)
     @group = Group.find(params[:group_id])
+
     respond_to do |format|
     	if @message.save
-        format.html {redirect_to group_messages_path(@group), flash: {alert: '保存されました'}}
+        format.html {redirect_to group_messages_path(@group)}
         format.json {render json:{
           name: @message.user.name,
           date: @message.created_at.strftime('%Y年%m月%d日 %H:%M'),
@@ -22,6 +23,7 @@ class MessagesController < ApplicationController
     	  redirect_to group_messages_path(@group), flash: {alert: '本文を入力してください。'}
       end
     end
+
   end
 
   private
