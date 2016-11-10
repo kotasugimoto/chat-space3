@@ -28,9 +28,9 @@ $(function(){
     })
     .done(function(data) {
       insert_html(data);
-      console.log(data);
     })
     .fail(function() {
+      console.log(data);
     });
   });
 });
