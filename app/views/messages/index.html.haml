@@ -36,10 +36,12 @@
          = message.created_at.strftime('%Y年%m月%d日 %H:%M')
        %p.chat-message__body
         = message.body
+        %img.chat-message__image{ src: "#{message.image}" }
    .chat-footer
     = form_for [@group,@message] do |f|
      .chat-footer__body
       = f.text_area :body
       %label.chat-footer__file
+       = f.file_field :image, class: "message-input__image", id: "message_image"
        %i.fa.fa-image
      = f.submit "Send", data: { disable_with: "送信中..." }
