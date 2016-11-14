@@ -5,9 +5,18 @@ function insert_html(data) {
   <p class = 'chat-message__time'>"+data.date+"</p></div>\
   <p class = 'chat-message__body'>"+data.body+"</p>"
 
-  $('.chat-message').append(html);
+  var image = "<img src=" + data.image + ">"
+
+  if (data.image != null) {
+
+    $('.chat-message').append(html,'<img class = "chat-message__image" src = ' + data.image +'>');
+
+  } else {
+
+    $('.chat-message').append(html);
 
   };
+};
 
 $(function(){
   $('#new_message').on('submit', function(e){

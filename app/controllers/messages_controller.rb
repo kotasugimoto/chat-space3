@@ -17,17 +17,21 @@ class MessagesController < ApplicationController
         format.json {render json:{
           name: @message.user.name,
           date: @message.created_at.strftime('%Y年%m月%d日 %H:%M'),
-          body: @message.body
-          }}
+          body: @message.body,
+          image: @message.image.url
+          }
+        }
+
     	else
     	  redirect_to group_messages_path(@group), flash: {alert: '本文を入力してください。'}
       end
+
     end
 
   end
 
   private
   def message_params
-	  params.require(:message).permit(:body).merge(user_id: current_user.id, group_id: params[:group_id])
+	  params.require(:message).permit(:body, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 end

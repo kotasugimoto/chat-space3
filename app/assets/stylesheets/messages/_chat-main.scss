@@ -64,8 +64,10 @@
 	list-style:none;
 }
 
-.chat-message{
+.chat-message__image{
 	margin-bottom:40px;
+		max-width: 300px;
+		height: auto;
 }
 
 .chat-message__header{
