@@ -36,7 +36,7 @@
          = message.created_at.strftime('%Y年%m月%d日 %H:%M')
        %p.chat-message__body
         = message.body
-        %img.chat-message__image{ src: "#{message.image}" }
+        = image_tag("#{message.image}",class: "chat-message__image")
    .chat-footer
     = form_for [@group,@message] do |f|
      .chat-footer__body
