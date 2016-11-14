@@ -7,13 +7,13 @@ function insert_html(data) {
 
   var image = "<img src=" + data.image + ">"
 
-  if (data.image ! = null) {
+  if (data.image != null) {
 
-    $('.chat-massage').append(html,'<img class = "chat-message__image" src = ' + data.image +'>');
+    $('.chat-message').append(html,'<img class = "chat-message__image" src = ' + data.image +'>');
 
   } else {
 
-  $('.chat-message').append(html);
+    $('.chat-message').append(html);
 
   };
 };
