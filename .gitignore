@@ -12,7 +12,15 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-public/upload/message/image/*
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.env
 
 # Ignore Byebug command history file.
 .byebug_history
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
