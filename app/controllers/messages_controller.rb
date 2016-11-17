@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-	  @message = Message.new(message_params)
+    @message = Message.new(message_params)
     @group = Group.find(params[:group_id])
 
     respond_to do |format|
