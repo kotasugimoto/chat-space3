@@ -5,6 +5,16 @@ class MessagesController < ApplicationController
     @messages = @group.messages
     @members = @group.members
 	  @message = Message.new
+
+    respond_to do |format|
+      format.html { }
+      format.json { render json: {
+        name: current_user.name,
+        messages: @messages
+        }
+      }
+    end
+
   end
 
   def create
