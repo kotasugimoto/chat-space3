@@ -34,7 +34,6 @@ $(function(){
         auto_insert(data);
       })
       .fail(function() {
-        console.log("error");
       });
 
     },3000);
